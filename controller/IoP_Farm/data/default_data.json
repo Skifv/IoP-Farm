@@ -1,0 +1,8 @@
+{
+    "temperature_DHT22": -50,
+    "temperature_DS18B20": -50,
+    "humidity": -50,
+    "water_level": -50,
+    "soil_moisture": -50,
+    "light_intensity": -50
+} 

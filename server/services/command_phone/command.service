@@ -1,0 +1,15 @@
+[Unit]
+Description=Phone Command Service (Port 1490)
+After=network.target
+
+[Service]
+ExecStart=/home/tovarichkek/services/command_phone/COMMAND
+Restart=always
+RestartSec=5
+User=root
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=command_service
+
+[Install]
+WantedBy=multi-user.target

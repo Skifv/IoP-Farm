@@ -1,0 +1,10 @@
+{
+    "pump_interval_days": 2,
+    "pump_start": "08:00",
+    "pump_volume_ml": 350,
+    
+    "heatlamp_target_temp": 25,
+    
+    "growlight_on": "07:00",
+    "growlight_off": "21:00"
+} 

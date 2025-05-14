@@ -1,0 +1,15 @@
+[Unit]
+Description=Config Service (Port 1489)
+After=network.target
+
+[Service]
+ExecStart=/home/tovarichkek/services/control_phone_config/CONFIG
+Restart=always
+RestartSec=5
+User=root
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=config_service
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=Logs Service (Port 1488)
+After=network.target
+
+[Service]
+ExecStart=/home/tovarichkek/services/logs_to_phone/LOGS
+Restart=always
+RestartSec=5
+User=root
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=logs_service
+
+[Install]
+WantedBy=multi-user.target

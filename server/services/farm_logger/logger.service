@@ -1,0 +1,15 @@
+[Unit]
+Description=Farm Logger Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/tovarichkek/services/farm_logger/LOGGER
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=farm_logger
+
+[Install]
+WantedBy=multi-user.target

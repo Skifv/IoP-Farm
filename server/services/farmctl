@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SERVICES="command.service config.service data.service logs.service logger.service"
+
+case $1 in
+    start|stop|restart|status|enable|disable)
+        sudo systemctl $1 $SERVICES
+        ;;
+    *)
+        echo "Usage: farmctl {start|stop|restart|status|enable|disable}"
+        exit 1
+        ;;
+esac
