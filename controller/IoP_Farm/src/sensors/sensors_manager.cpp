@@ -383,6 +383,7 @@ namespace farm::sensors
     void SensorsManager::sensorsEnable(bool enable)
     {
         if (enabled == enable) {
+            logger->log(Level::Debug, "[Sensors] Состояние датчиков не изменилось");
             return; // Если состояние не изменилось, ничего не делаем
         }
 
@@ -394,4 +395,11 @@ namespace farm::sensors
             logger->log(Level::Farm, "[Sensors] Датчики выключены");
         }
     }
-} 
+
+    bool SensorsManager::isEnabled() const  
+    {
+        return enabled;
+    }
+}
+
+

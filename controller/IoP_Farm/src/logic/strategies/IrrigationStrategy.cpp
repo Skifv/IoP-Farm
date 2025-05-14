@@ -345,11 +345,11 @@ namespace farm::logic::strategies
     
     void IrrigationStrategy::forceTurnOff()
     {
-        logger->log(log::Level::Debug, "[IrrigationStrategy] Принудительное выключение насоса");
+        logger->log(log::Level::Farm, "[IrrigationStrategy] Принудительное выключение насоса");
         
         if (isIrrigating)
         {
-            logger->log(log::Level::Debug, "[IrrigationStrategy] Прерывание активного "
+            logger->log(log::Level::Warning, "[IrrigationStrategy] Прерывание активного "
                                            "автоматического полива");
             stopIrrigation();
             return;
@@ -358,7 +358,7 @@ namespace farm::logic::strategies
         // Проверяем, включен ли насос
         if (!actuator->getState())
         {
-            logger->log(log::Level::Debug, "[IrrigationStrategy] Попытка выключить насос, "
+            logger->log(log::Level::Warning, "[IrrigationStrategy] Попытка выключить насос, "
                                                "но он уже выключен");
             return;
         }

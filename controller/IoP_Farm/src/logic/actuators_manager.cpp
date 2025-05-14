@@ -119,6 +119,12 @@ namespace farm::logic
     
     void ActuatorsManager::loop()
     {
+        // Если ферма выключена, то нет смысла проверять актуаторы
+        if (!sensorsManager->isEnabled())
+        {
+            return;
+        }
+
         unsigned long currentTime = millis();
         if (currentTime - lastCheckTime >= config::actuators::CHECK_INTERVAL)
         {
