@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_open_file">Открыть из файла...</string>
+    <string name="button_upload_config">Загрузить конфигурацию на сервер</string>
+    <string name="set_config_button">Конфигурация...</string>
+</resources>

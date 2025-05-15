@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name" translatable="false">IoP Farm</string>
+    <string name="button_open_file">Open from file...</string>
+    <string name="button_upload_config">Upload config to a server</string>
+    <string name="set_config_button">Set configuration...</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email" translatable="false">Email</string>
+    <string name="prompt_password" translatable="false">Password</string>
+    <string name="action_sign_in" translatable="false">Sign in or register</string>
+    <string name="action_sign_in_short" translatable="false">Sign in</string>
+    <string name="welcome" translatable="false">"Welcome !"</string>
+    <string name="invalid_username" translatable="false">Not a valid username</string>
+    <string name="invalid_password" translatable="false">Password must be >5 characters</string>
+</resources>

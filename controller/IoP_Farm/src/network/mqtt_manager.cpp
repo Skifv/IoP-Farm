@@ -364,6 +364,10 @@ namespace farm::net
                           "[MQTT] Ошибка обработки полученной команды");
             }
         }
+        else
+        {
+            logger->log(Level::Error, "[MQTT] Неизвестный топик");
+        }
         
         delete[] message;
 
@@ -429,9 +433,21 @@ namespace farm::net
     {
         logger->log(Level::Info, 
                   "[MQTT] Обработка команды %d", static_cast<int>(command));
-        
+
         // Все команды перенаправляем в ActuatorsManager
         auto actuatorsManager = farm::logic::ActuatorsManager::getInstance();
+
+        // Заглушка для включения фермы, потому что в if не заходит (actuatorsManager->isInitialized() == false)
+        if (actuatorsManager && command == CommandCode::FARM_ON)
+        {
+            logger->log(Level::Warning, "[ActuatorsManager] Получена команда включения функциональности фермы");
+            actuatorsManager->syncFarmState(true);  
+            logger->log(Level::Info, 
+                        "[MQTT] Команда %d успешно обработана ActuatorsManager", 
+                        static_cast<int>(command));
+            return;
+        }
+
         if (actuatorsManager && actuatorsManager->isInitialized())
         {
             bool result = actuatorsManager->handleMqttCommand(command);

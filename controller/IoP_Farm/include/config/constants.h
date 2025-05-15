@@ -242,10 +242,10 @@ namespace farm::config
         // Константы для стратегии полива
         namespace irrigation
         {
-            constexpr float DEFAULT_MIN_WATER_LEVEL = 10.0f;       // Минимальный уровень воды для полива (%)
+            constexpr float DEFAULT_MIN_WATER_LEVEL = 5.0f;       // Минимальный уровень воды для полива (%)
             
-            constexpr uint32_t VOLUME_CHECK_INTERVAL_S = 1;        // Интервал проверки объема воды (в секундах)
-            constexpr uint32_t IRRIGATION_TIMEOUT_SEC  = 10;      // Таймаут полива (10 минут в секундах)
+            constexpr uint32_t VOLUME_CHECK_INTERVAL_S = 0.1;      // Интервал проверки объема воды (в секундах)
+            constexpr uint32_t IRRIGATION_TIMEOUT_SEC  = 20;      // Таймаут полива
             
             // Ключи конфигурации
             constexpr const char* CONFIG_KEY_INTERVAL     = "pump_interval_days";
@@ -349,7 +349,7 @@ namespace farm::log // это не конфиг, чисто для логгер�
         constexpr const char* STYLE_BOLD    = "\033[1m";
         
         // Константы для MQTT логгера
-        constexpr unsigned long MQTT_LOG_SEND_INTERVAL = 1000;  // Интервал отправки логов по MQTT (миллисекунды)
+        constexpr unsigned long MQTT_LOG_SEND_INTERVAL = 500;  // Интервал отправки логов по MQTT (миллисекунды)
         constexpr farm::log::Level MQTT_LOG_MIN_LEVEL = farm::log::Level::Debug; // Минимальный уровень для отправки в MQTT
         constexpr size_t MAX_BUFFER_SIZE = 100; // Максимальный размер буфера логов
         constexpr size_t MAX_PACKET_SIZE = 50; // Максимальное количество сообщений в одном пакете MQTT
