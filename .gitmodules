@@ -1,3 +1,6 @@
 [submodule "farm_remote_control_app"]
   path = farm_remote_control_app
   url = git@github.com:Mark-Aurel1us/farm_remote_control_app.git
+[submodule "app"]
+	path = app
+	url = https://github.com/Mark-Aurel1us/farm_remote_control_app.git
